@@ -8,13 +8,15 @@ def main():
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
 
     # アドレスを定義する
-    server_address = '/udp_socket_file'
+    server_address = '127.0.0.1'
 
     try:
         # 前回の実行でソケットファイルが残っていた場合、そのファイルを削除する
         os.unlink(server_address)
     except FileNotFoundError:
         pass
+
+    print('starting up on {}'.format(server_address))
 
     # サーバのアドレスをソケットに紐付ける
     sock.bind(server_address)
