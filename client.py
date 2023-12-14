@@ -7,8 +7,8 @@ def main():
     sock = socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM)
 
     # アドレスを定義する
-    server_address = '/udp_socket_file'
-    client_address = '/udp_client_socket_file'
+    server_address = '127.0.0.1'
+    client_address = '127.0.0.2'
     
     try:
         # 前回の実行でソケットファイルが残っていた場合、そのファイルを削除する
